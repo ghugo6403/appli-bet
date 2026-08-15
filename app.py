@@ -19,6 +19,7 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
+from config import LEAGUES, VALUE_BET_EDGE_THRESHOLD, CURRENT_SEASON
 
 import mock_data
 from football_data import FootballDataClient, cached_past_matches, cached_upcoming_matches
