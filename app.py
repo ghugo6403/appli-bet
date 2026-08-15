@@ -235,10 +235,9 @@ else:
     display_vb["match"] = display_vb["home_team"] + " vs " + display_vb["away_team"]
     st.dataframe(
         display_vb[["date", "league", "match", "market", "odds", "model_probability", "implied_probability", "edge"]],
-        column_config={
-            "model_probability": st.column_config.NumberColumn("Proba modèle", format="%.1f%%"),
-            "implied_probability": st.column_config.NumberColumn("Proba implicite", format="%.1f%%"),
-            "edge": st.column_config.ProgressColumn("Edge", format="%.1f%%", min_value=0, max_value=float(max(display_vb["edge"].max(), 0.3))),
+        column_config={"model_probability": st.column_config.NumberColumn("Proba modèle", format="percent"),
+            "implied_probability": st.column_config.NumberColumn("Proba implicite", format="percent"),
+            "edge": st.column_config.ProgressColumn("Edge", format="percent", min_value=0, max_value=float(max(display_vb["edge"].max(), 0.3))),
             "odds": st.column_config.NumberColumn("Cote moyenne", format="%.2f"),
         },
         hide_index=True,
@@ -264,11 +263,11 @@ st.dataframe(
         "p_over25": "Proba O2.5", "p_under25": "Proba U2.5", "value_bet": "Value Bet ?",
     }),
     column_config={
-        "Proba 1": st.column_config.NumberColumn(format="%.1f%%"),
-        "Proba X": st.column_config.NumberColumn(format="%.1f%%"),
-        "Proba 2": st.column_config.NumberColumn(format="%.1f%%"),
-        "Proba O2.5": st.column_config.NumberColumn(format="%.1f%%"),
-        "Proba U2.5": st.column_config.NumberColumn(format="%.1f%%"),
+        "Proba 1": st.column_config.NumberColumn(format="percent"),
+        "Proba X": st.column_config.NumberColumn(format="percent"),
+        "Proba 2": st.column_config.NumberColumn(format="percent"),
+        "Proba O2.5": st.column_config.NumberColumn(format="percent"),
+        "Proba U2.5": st.column_config.NumberColumn(format="percent"), 
     },
     hide_index=True,
     use_container_width=True,
