@@ -58,10 +58,10 @@ def load_league_data(league: str, demo_mode: bool, n_upcoming: int):
         history_df = mock_data.generate_history(league)
         matches_with_odds = mock_data.generate_upcoming_fixtures_with_odds(league, n_matches=n_upcoming)
     else:
-        past_fixtures = cached_past_fixtures(league_cfg["api_football_id"], CURRENT_SEASON)
+        past_fixtures = cached_past_matches(league_cfg["football_data_code"])
         history_df = build_team_history(past_fixtures)
 
-        upcoming_fixtures = cached_upcoming_fixtures(league_cfg["api_football_id"], CURRENT_SEASON, n_upcoming)
+        upcoming_fixtures = cached_upcoming_matches(league_cfg["football_data_code"])
         odds_events = cached_odds(league_cfg["odds_api_key"])
         matches_with_odds = merge_fixtures_with_odds(upcoming_fixtures, odds_events)
         if not matches_with_odds.empty:
@@ -149,9 +149,9 @@ def score_heatmap(matrix: np.ndarray, home_team: str, away_team: str, max_displa
 # ---------------------------------------------------------------------------
 st.sidebar.title("⚙️ Paramètres")
 
-api_football_client = APIFootballClient()
+football_data_client = FootballDataClient()
 odds_client = OddsAPIClient()
-keys_missing = not (api_football_client.enabled and odds_client.enabled)
+keys_missing = not (football_data_client.enabled and odds_client.enabled)
 
 demo_mode = st.sidebar.toggle(
     "Mode démo (données simulées)",
