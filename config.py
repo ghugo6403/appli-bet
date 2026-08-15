@@ -35,40 +35,19 @@ def _get_secret(key: str, default: str = "") -> str:
 API_FOOTBALL_KEY = _get_secret("API_FOOTBALL_KEY")
 API_FOOTBALL_HOST = "v3.football.api-sports.io"
 
+FOOTBALL_DATA_API_KEY = _get_secret("FOOTBALL_DATA_API_KEY")
+FOOTBALL_DATA_BASE_URL = "https://api.football-data.org/v4"
+
 ODDS_API_KEY = _get_secret("ODDS_API_KEY")
 ODDS_API_BASE_URL = "https://api.the-odds-api.com/v4"
 
-# --- Les 5 grands championnats européens --------------------------------
-# api_football_id : identifiant "league" d'API-Football
-# odds_api_key    : "sport key" utilisé par The-Odds-API
 LEAGUES = {
-    "Premier League": {
-        "api_football_id": 39,
-        "odds_api_key": "soccer_epl",
-        "country": "Angleterre",
-    },
-    "La Liga": {
-        "api_football_id": 140,
-        "odds_api_key": "soccer_spain_la_liga",
-        "country": "Espagne",
-    },
-    "Bundesliga": {
-        "api_football_id": 78,
-        "odds_api_key": "soccer_germany_bundesliga",
-        "country": "Allemagne",
-    },
-    "Serie A": {
-        "api_football_id": 135,
-        "odds_api_key": "soccer_italy_serie_a",
-        "country": "Italie",
-    },
-    "Ligue 1": {
-        "api_football_id": 61,
-        "odds_api_key": "soccer_france_ligue_one",
-        "country": "France",
-    },
+    "Premier League": {"api_football_id": 39, "football_data_code": "PL", "odds_api_key": "soccer_epl", "country": "Angleterre"},
+    "La Liga": {"api_football_id": 140, "football_data_code": "PD", "odds_api_key": "soccer_spain_la_liga", "country": "Espagne"},
+    "Bundesliga": {"api_football_id": 78, "football_data_code": "BL1", "odds_api_key": "soccer_germany_bundesliga", "country": "Allemagne"},
+    "Serie A": {"api_football_id": 135, "football_data_code": "SA", "odds_api_key": "soccer_italy_serie_a", "country": "Italie"},
+    "Ligue 1": {"api_football_id": 61, "football_data_code": "FL1", "odds_api_key": "soccer_france_ligue_one", "country": "France"},
 }
-
 # --- Paramètres saison / historique --------------------------------------
 # API-Football désigne une saison par son année de démarrage
 # (ex : 2025 pour la saison 2025-2026). A ajuster à la volée si besoin.
