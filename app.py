@@ -21,12 +21,12 @@ import plotly.graph_objects as go
 import streamlit as st
 
 from config import LEAGUES, VALUE_BET_EDGE_THRESHOLD, CURRENT_SEASON
-from src import mock_data
-from src.api_football import APIFootballClient, cached_past_fixtures, cached_upcoming_fixtures
-from src.data_processing import build_team_history, merge_fixtures_with_odds
-from src.odds_api import OddsAPIClient, cached_odds
-from src.poisson_model import DixonColesModel
-from src.value_bet import MARKETS, build_value_bets_table, detect_value_bets
+import mock_data
+from api_football import APIFootballClient, cached_past_fixtures, cached_upcoming_fixtures
+from data_processing import build_team_history, merge_fixtures_with_odds
+from odds_api import OddsAPIClient, cached_odds
+from poisson_model import DixonColesModel
+from value_bet import MARKETS, build_value_bets_table, detect_value_bets
 
 # --- Palette (voir la skill dataviz — palette de référence validée) --------
 COLOR_SERIES_1 = "#2a78d6"   # bleu — Domicile / Over
