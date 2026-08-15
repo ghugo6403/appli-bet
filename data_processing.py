@@ -72,6 +72,6 @@ def build_team_history(past_fixtures_df: pd.DataFrame) -> pd.DataFrame:
     """
     if past_fixtures_df.empty:
         return past_fixtures_df
-    df = past_fixtures_df[past_fixtures_df["status"] == "FT"].copy()
+    df = past_fixtures_df[past_fixtures_df["status"].isin(["FT", "FINISHED"])].copy()
     df = df.dropna(subset=["home_goals", "away_goals"])
     return df[["date", "home_team", "away_team", "home_goals", "away_goals"]]
