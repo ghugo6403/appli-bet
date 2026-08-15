@@ -63,7 +63,7 @@ class FootballDataClient:
 
 
 @st.cache_data(ttl=3600, show_spinner=False)
-def cached_upcoming_matches(competition_code, days_ahead=14):
+def cached_upcoming_matches(competition_code, days_ahead=21):
     client = FootballDataClient()
     today = pd.Timestamp.now(tz="UTC").normalize()
     date_from = today.strftime("%Y-%m-%d")
@@ -73,7 +73,7 @@ def cached_upcoming_matches(competition_code, days_ahead=14):
 
 
 @st.cache_data(ttl=3600, show_spinner=False)
-def cached_past_matches(competition_code, days_back=180):
+def cached_past_matches(competition_code, days_back=365):
     client = FootballDataClient()
     today = pd.Timestamp.now(tz="UTC").normalize()
     date_from = (today - pd.Timedelta(days=days_back)).strftime("%Y-%m-%d")
