@@ -20,10 +20,8 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from config import LEAGUES, VALUE_BET_EDGE_THRESHOLD, CURRENT_SEASON
-import mock_datafrom football_data 
-import FootballDataClient, cached_past_matches, cached_upcoming_matches
-from data_processing import build_team_history, merge_fixtures_with_odds
+import mock_data
+from football_data import FootballDataClient, cached_past_matches, cached_upcoming_matches
 from odds_api import OddsAPIClient, cached_odds
 from poisson_model import DixonColesModel
 from value_bet import MARKETS, build_value_bets_table, detect_value_bets
