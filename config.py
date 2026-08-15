@@ -47,6 +47,7 @@ LEAGUES = {
     "Bundesliga": {"api_football_id": 78, "football_data_code": "BL1", "odds_api_key": "soccer_germany_bundesliga", "country": "Allemagne"},
     "Serie A": {"api_football_id": 135, "football_data_code": "SA", "odds_api_key": "soccer_italy_serie_a", "country": "Italie"},
     "Ligue 1": {"api_football_id": 61, "football_data_code": "FL1", "odds_api_key": "soccer_france_ligue_one", "country": "France"},
+    "Ligue des Champions": {"api_football_id": 2, "football_data_code": "CL", "odds_api_key": "soccer_uefa_champs_league", "country": "Europe"},
 }
 # --- Paramètres saison / historique --------------------------------------
 # API-Football désigne une saison par son année de démarrage
