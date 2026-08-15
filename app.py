@@ -40,7 +40,7 @@ SEQUENTIAL_BLUE = [
     "#5598e7", "#3987e5", "#2a78d6", "#256abf", "#1c5cab", "#184f95", "#0d366b",
 ]
 
-st.set_page_config(page_title="Value Bets Finder — 5 Grands Championnats", layout="wide")
+st.set_page_config(page_title="King Louis Prono", layout="wide")
 
 
 # ---------------------------------------------------------------------------
@@ -181,7 +181,7 @@ show_unreliable = st.sidebar.checkbox(
 # ---------------------------------------------------------------------------
 # Corps du dashboard
 # ---------------------------------------------------------------------------
-st.title("⚽ Value Bets Finder — 5 Grands Championnats")
+st.title("⚽ King Louis Prono")
 st.caption(
     "Détection de value bets à partir d'un modèle Dixon-Coles (Poisson modifiée) "
     "calibré sur l'historique de chaque championnat, comparé aux cotes moyennes du marché."
